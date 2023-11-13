@@ -1,4 +1,3 @@
-
 server:
   servlet:
     context-path: /shipping-service
@@ -12,7 +11,7 @@ spring:
     name: SHIPPING-SERVICE
   profiles:
     active:
-    - dev
+      - dev
 
 resilience4j:
   circuitbreaker:
@@ -35,11 +34,4 @@ management:
   endpoint:
     health:
       show-details: always
-
-
-
-
-
-
-
 

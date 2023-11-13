@@ -1,4 +1,3 @@
-
 server:
   servlet:
     context-path: /app
@@ -12,7 +11,7 @@ spring:
     name: PROXY-CLIENT
   profiles:
     active:
-    - dev
+      - dev
 
 resilience4j:
   circuitbreaker:
@@ -35,11 +34,4 @@ management:
   endpoint:
     health:
       show-details: always
-
-
-
-
-
-
-
 

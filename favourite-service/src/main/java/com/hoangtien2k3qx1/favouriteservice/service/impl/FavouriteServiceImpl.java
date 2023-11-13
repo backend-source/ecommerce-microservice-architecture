@@ -32,7 +32,7 @@ public class FavouriteServiceImpl implements FavouriteService {
 	
 	@Override
 	public List<FavouriteDto> findAll() {
-		log.info("*** FavouriteDto List, service; fetch all favourites *");
+		log.info("FavouriteDto List, service; fetch all favourites");
 		return this.favouriteRepository.findAll()
 				.stream()
 					.map(FavouriteMappingHelper::map)
@@ -46,12 +46,12 @@ public class FavouriteServiceImpl implements FavouriteService {
 						return f;
 					})
 					.distinct()
-					.collect(Collectors.toUnmodifiableList());
+					.collect(Collectors.toUnmodifiableList()); // immutable
 	}
 	
 	@Override
 	public FavouriteDto findById(final FavouriteId favouriteId) {
-		log.info("*** FavouriteDto, service; fetch favourite by id *");
+		log.info("FavouriteDto, service; fetch favourite by id");
 		return this.favouriteRepository.findById(favouriteId)
 				.map(FavouriteMappingHelper::map)
 				.map(f -> {

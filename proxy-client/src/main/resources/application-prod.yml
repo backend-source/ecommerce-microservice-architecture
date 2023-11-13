@@ -1,6 +1,6 @@
-
 server:
   port: 8900
+#  8900
 
 management:
   endpoints:
