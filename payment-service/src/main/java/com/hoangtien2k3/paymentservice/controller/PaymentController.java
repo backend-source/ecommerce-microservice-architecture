@@ -22,7 +22,7 @@ public class PaymentController {
 
     @GetMapping
     public ResponseEntity<DtoCollectionResponse<PaymentDto>> findAll() {
-        log.info("*** PaymentDto List, controller; fetch all payments *");
+        log.info("PaymentDto List, controller; fetch all payments");
         return ResponseEntity.ok(new DtoCollectionResponse<>(this.paymentService.findAll()));
     }
 
@@ -30,7 +30,7 @@ public class PaymentController {
     public ResponseEntity<PaymentDto> findById(@PathVariable("paymentId")
                                                @NotBlank(message = "Input must not be blank")
                                                @Valid final String paymentId) {
-        log.info("*** PaymentDto, resource; fetch payment by id *");
+        log.info("PaymentDto, resource; fetch payment by id");
         return ResponseEntity.ok(this.paymentService.findById(Integer.parseInt(paymentId)));
     }
 
@@ -38,7 +38,7 @@ public class PaymentController {
     public ResponseEntity<PaymentDto> save(@RequestBody
                                            @NotNull(message = "Input must not be NULL")
                                            @Valid final PaymentDto paymentDto) {
-        log.info("*** PaymentDto, resource; save payment *");
+        log.info("PaymentDto, resource; save payment");
         return ResponseEntity.ok(this.paymentService.save(paymentDto));
     }
 
@@ -52,7 +52,7 @@ public class PaymentController {
 
     @DeleteMapping("/{paymentId}")
     public ResponseEntity<Boolean> deleteById(@PathVariable("paymentId") final String paymentId) {
-        log.info("*** Boolean, resource; delete payment by id *");
+        log.info("Boolean, resource; delete payment by id");
         this.paymentService.deleteById(Integer.parseInt(paymentId));
         return ResponseEntity.ok(true);
     }

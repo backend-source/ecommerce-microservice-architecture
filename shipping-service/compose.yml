@@ -8,5 +8,3 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=dev
 
-
-

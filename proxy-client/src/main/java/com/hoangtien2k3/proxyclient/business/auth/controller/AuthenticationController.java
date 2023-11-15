@@ -31,13 +31,13 @@ public class AuthenticationController {
             @RequestBody
             @NotNull(message = "")
             @Valid final AuthenticationRequest authenticationRequest) {
-        log.info("**Authentication controller, proceed with the request*\n");
+        log.info("Authentication controller, proceed with the request");
         return ResponseEntity.ok(this.authenticationService.authenticate(authenticationRequest));
     }
 
     @GetMapping("/jwt/{jwt}")
     public ResponseEntity<Boolean> authenticate(@PathVariable("jwt") final String jwt) {
-        log.info("**Authentication controller, proceed with the request*\n");
+        log.info("Authentication controller, proceed with the request");
         return ResponseEntity.ok(this.authenticationService.authenticate(jwt));
     }
 

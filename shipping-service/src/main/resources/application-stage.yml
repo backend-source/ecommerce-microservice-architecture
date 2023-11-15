@@ -25,7 +25,6 @@ spring:
 logging:
   file:
     name: src/main/resources/script/stage_log.log
-    clean-history-on-start: true
   level:
     org:
       hibernate:
@@ -39,4 +38,7 @@ logging:
             rest: DEBUG
             jpa: DEBUG
             orm: DEBUG
+  logback:
+    rollingpolicy:
+      clean-history-on-start: true
 

@@ -30,7 +30,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public List<PaymentDto> findAll() {
-        log.info("*** PaymentDto List, service; fetch all payments *");
+        log.info("PaymentDto List, service; fetch all payments");
         return this.paymentRepository.findAll()
                 .stream()
                 .map(PaymentMappingHelper::map)
@@ -40,7 +40,7 @@ public class PaymentServiceImpl implements PaymentService {
                     return p;
                 })
                 .distinct()
-                .collect(Collectors.toUnmodifiableList());
+                .toList();
     }
 
     @Override

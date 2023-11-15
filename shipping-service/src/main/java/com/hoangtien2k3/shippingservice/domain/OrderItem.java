@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "order_items")
-@IdClass(OrderItemId.class)
+@IdClass(OrderItemId.class) // id class
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -29,11 +29,11 @@ public final class OrderItem extends AbstractMappedEntity implements Serializabl
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @Id
+    @Id // primary key
     @Column(name = "product_id", nullable = false, updatable = false)
     private Integer productId;
 
-    @Id
+    @Id // primary key
     @Column(name = "order_id", nullable = false, updatable = false)
     private Integer orderId;
 

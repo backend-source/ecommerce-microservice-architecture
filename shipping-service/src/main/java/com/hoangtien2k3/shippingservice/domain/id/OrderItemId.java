@@ -14,6 +14,8 @@ public class OrderItemId implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
+
+    // primary keys in class properties
     private Integer productId;
     private Integer orderId;
 
