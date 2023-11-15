@@ -31,7 +31,7 @@ public class VerificationTokenServiceImpl implements VerificationTokenService {
                 .stream()
                 .map(VerificationTokenMappingHelper::map)
                 .distinct()
-                .collect(Collectors.toUnmodifiableList());
+                .toList();
     }
 
     @Override

@@ -32,7 +32,7 @@ public class CredentialServiceImpl implements CredentialService {
                 .stream()
                 .map(CredentialMappingHelper::map)
                 .distinct()
-                .collect(Collectors.toUnmodifiableList()); // immutable list
+                .toList();
     }
 
     @Override

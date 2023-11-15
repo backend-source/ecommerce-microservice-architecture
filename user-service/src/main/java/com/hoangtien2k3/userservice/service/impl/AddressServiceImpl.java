@@ -1,8 +1,6 @@
 package com.hoangtien2k3.userservice.service.impl;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -31,7 +29,7 @@ public class AddressServiceImpl implements AddressService {
                 .stream()
                 .map(AddressMappingHelper::map)
                 .distinct()
-                .collect(Collectors.toUnmodifiableList()); // immutable list of
+                .toList();
     }
 
     @Override

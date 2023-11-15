@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
                 .stream()
                 .map(UserMappingHelper::map)
                 .distinct()
-                .collect(Collectors.toUnmodifiableList());
+                .toList();
     }
 
     @Override
